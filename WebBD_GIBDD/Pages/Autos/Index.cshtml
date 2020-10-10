@@ -1,0 +1,90 @@
+﻿@page
+@model WebBD_GIBDD.Pages.Autos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].RegNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].NumberCarBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].EngineNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DateSheetNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DateOfIssue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DateOfRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].COLOR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].TechInspection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].DateTechInspection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auto[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Auto) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberCarBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSheetNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfIssue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.COLOR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechInspection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTechInspection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

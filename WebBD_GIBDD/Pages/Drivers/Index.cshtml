@@ -1,0 +1,84 @@
+﻿@page
+@model WebBD_GIBDD.Pages.Drivers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].PassportData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DriversLicenseNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].DateIssueCertificate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].EndDateCertificate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].CategoryCertificate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Driver[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Driver) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassportData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriversLicenseNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIssueCertificate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDateCertificate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryCertificate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
